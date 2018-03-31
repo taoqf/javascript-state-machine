@@ -42,12 +42,12 @@ declare namespace StateMachine {
 	}
 
 	interface Options {
-		name: string;
-		past: string;
-		future: string;
-		init: string;
-		max: number;	// max history
-		state: string;
+		name?: string;
+		past?: string;
+		future?: string;
+		init?: string;
+		max?: number;	// max history
+		state?: string;
 		transitions: {
 			name: string;
 			from: string | string[] | '*';
@@ -62,8 +62,8 @@ declare namespace StateMachine {
 			onAfterTransition?(lifecycle: LifeCycle, ...args: any[]): any | Promise<any>;	// 5
 			onPendingTransition?(transition: string, from: string, to: string): any | Promise<any>;
 		};
-		data: any;	// {} | any[] | ((...args: any[]) => {} | any[]);
-		plugins: any[];
+		data?: any;	// {} | any[] | ((...args: any[]) => {} | any[]);
+		plugins?: any[];
 	}
 
 	interface IFSM {
