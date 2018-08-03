@@ -30,6 +30,8 @@
 	"license": "MIT",
 	"main": "dist/state-machine.min.js",
 	"files": [
+		"docs/*",
+		"examples/*",
 		"dist/**/*.js",
 		"types/state-machine.d.ts"
 	],
