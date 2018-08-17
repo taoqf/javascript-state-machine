@@ -1,18 +1,16 @@
-# Commonjs
+# CommonJS
 ```ts
-import * as StateMachine from 'javascript-state-machine';
+import * as StateMachine from '@taoqf/javascript-state-machine';
 ```
 
-# umd
-Add this into your tsconfig.json
+# UMD
+Add this to your project `tsconfig.json` file:
 
 ```json
 {
-	"compilerOptions": {
-		// other options...
-		"types": [
-			"javascript-state-machine"
-		]
-	}
+    "compilerOptions": {
+      ...
+      "types": ["javascript-state-machine"]
+    }
 }
 ```
