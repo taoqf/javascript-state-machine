@@ -1,9 +1,13 @@
 # Javascript State Machine
 
-[![NPM version](https://img.shields.io/npm/v/@taoqf/javascript-state-machine.svg?style=flat)](https://www.npmjs.org/package/@taoqf/javascript-state-machine)
+[![npm version](https://badge.fury.io/js/%40taoqf%2Fjavascript-state-machine.svg)](https://www.npmjs.com/package/@taoqf/javascript-state-machine)
 [![Build Status](https://travis-ci.org/taoqf/javascript-state-machine.svg?branch=master)](https://travis-ci.org/taoqf/javascript-state-machine)
 
 A library for finite state machines.
+
+一个有限状态机库.
+
+查看[中文文档](README_zh-cn.md)
 
 ![matter state machine](examples/matter.png)
 
@@ -13,6 +17,9 @@ A library for finite state machines.
 
 > **VERSION 3.0** Is a significant rewrite from earlier versions.
   Existing 2.x users should be sure to read the [Upgrade Guide](docs/upgrading-from-v2.md).
+
+> 值得注意的是**VERSION 3.0** 已经重写了。
+  现有2.x用户应该阅读[升级指南](docs/upgrading-from-v2.md).
 
 <br>
 
@@ -136,16 +143,13 @@ Read more about
 
 You can [Contribute](docs/contributing.md) to this project with issues or pull requests.
 
-You might also want to support this project by purchasing a [commercial license](docs/commercial-license.md).
-
 # Release Notes
 
 See [RELEASE NOTES](RELEASE_NOTES.md) file.
 
 # License
 
-Dual-licensed under the [LGPL](http://www.gnu.org/licenses/lgpl-3.0.html) for the open source community and also available with support
-under a [commercial license](docs/commercial-license.md).
+See [MIT LICENSE](https://github.com/jakesgordon/javascript-state-machine/blob/master/LICENSE) file.
 
 # Contact
 

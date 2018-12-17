@@ -27,6 +27,7 @@ module.exports = function (env) {
 
 	return config.map(function (cfg) {
 		return {
+			mode: "production",
 			entry: cfg.entry,
 			resolve: {
 				modules: [source]

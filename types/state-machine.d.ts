@@ -11,8 +11,11 @@ declare class StateMachine {
 	allStates: StateMachine.StateMachineStates;
 	observe: StateMachine.Observe;
 	// history: string[];
-	historyBack();
-	historyForward();
+	clearHistory(): void;
+	historyBack(): void;
+	historyForward(): void;
+	canHistory(): boolean;
+	canhistoryForward(): boolean;
 }
 
 declare namespace StateMachine {
@@ -54,7 +57,7 @@ declare namespace StateMachine {
 			to: string | ((...args: any[]) => string);
 		}[];
 		methods: {
-			[method: string]: Callback;
+			[method: string]: Callback | undefined;
 			onBeforeTransition?(lifecycle: LifeCycle, ...args: any[]): boolean | Promise<boolean>;	// 1
 			onLeaveState?(lifecycle: LifeCycle, ...args: any[]): boolean | Promise<boolean>;	// 2
 			onTransition?(lifecycle: LifeCycle, ...args: any[]): boolean | Promise<boolean>;	// 3
