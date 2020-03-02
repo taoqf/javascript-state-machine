@@ -1,21 +1,22 @@
 declare class StateMachine {
-	constructor(options: Partial<StateMachine.Options>);
-	static factory(options: Partial<StateMachine.Options>): StateMachine.IFSM;
-	static factory<T>(instance: T, options: Partial<StateMachine.Options>): StateMachine.IFSM | T;
-	[action: string]: ((...args: any[]) => any);
-	is: StateMachine.StateMachineIs;
-	can: StateMachine.StateMachineCan;
-	cannot: StateMachine.StateMachineCan;
-	transitions: StateMachine.StateMachineTransitions;
-	allTransitions: StateMachine.StateMachineTransitions;
-	allStates: StateMachine.StateMachineStates;
-	observe: StateMachine.Observe;
-	// history: string[];
-	clearHistory(): void;
-	historyBack(): void;
-	historyForward(): void;
-	canHistory(): boolean;
-	canhistoryForward(): boolean;
+	public constructor(options: Partial<StateMachine.Options>);
+	public static factory(options: Partial<StateMachine.Options>): StateMachine.IFSM;
+	public static factory<T>(instance: T, options: Partial<StateMachine.Options>): StateMachine.IFSM | T;
+	[action: string]: ((...args: any[]) => any) | string | string[];
+	public is: StateMachine.StateMachineIs;
+	public can: StateMachine.StateMachineCan;
+	public cannot: StateMachine.StateMachineCan;
+	public transitions: StateMachine.StateMachineTransitions;
+	public allTransitions: StateMachine.StateMachineTransitions;
+	public allStates: StateMachine.StateMachineStates;
+	public observe: StateMachine.Observe;
+	public clearHistory(): void;
+	public historyBack(): void;
+	public historyForward(): void;
+	public canHistory(): boolean;
+	public canhistoryForward(): boolean;
+	protected state: string;
+	protected history: string[];
 }
 
 declare namespace StateMachine {
