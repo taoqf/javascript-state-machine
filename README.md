@@ -13,7 +13,7 @@ A library for finite state machines.
 
 <br>
 
-### NOTE for existing users
+## NOTE for existing users
 
 > **VERSION 3.0** Is a significant rewrite from earlier versions.
   Existing 2.x users should be sure to read the [Upgrade Guide](docs/upgrading-from-v2.md).
@@ -23,7 +23,7 @@ A library for finite state machines.
 
 <br>
 
-# Installation
+## Installation
 
 In a browser:
 
@@ -47,24 +47,20 @@ In Node.js:
   var StateMachine = require('@taoqf/javascript-state-machine');
 ```
 
-# Usage
+## Usage
 
 A state machine can be constructed using:
 
 ```javascript
-  var fsm = new StateMachine({
-    init: 'solid',
-    transitions: [
-      { name: 'melt',     from: 'solid',  to: 'liquid' },
-      { name: 'freeze',   from: 'liquid', to: 'solid'  },
-      { name: 'vaporize', from: 'liquid', to: 'gas'    },
-      { name: 'condense', from: 'gas',    to: 'liquid' }
-    ],
-    methods: {
-      onMelt:     function() { console.log('I melted')    },
-      onFreeze:   function() { console.log('I froze')     },
-      onVaporize: function() { console.log('I vaporized') },
-      onCondense: function() { console.log('I condensed') }
+  var fsm = new StateMachine('solid',{
+      melt: { from: 'solid',  to: 'liquid' },
+      freeze: { from: 'liquid', to: 'solid'  },
+      vaporize: { from: 'liquid', to: 'gas'    },
+      condense: { from: 'gas',    to: 'liquid' }
+  },{
+  on(transition, from, to) {
+    if(transition === 'melt'){
+      console.log('I melted');
     }
   });
 ```
@@ -75,17 +71,10 @@ A state machine can be constructed using:
 
 ... methods to transition to a different state:
 
-  * `fsm.melt()`
-  * `fsm.freeze()`
-  * `fsm.vaporize()`
-  * `fsm.condense()`
-
-... observer methods called automatically during the lifecycle of a transition:
-
-  * `onMelt()`
-  * `onFreeze()`
-  * `onVaporize()`
-  * `onCondense()`
+  * `await fsm.fire('melt')`
+  * `await fsm.fire('freeze')`
+  * `await fsm.fire('vaporize')`
+  * `await fsm.fire('condense')`
 
 ... along with the following helper methods:
 
@@ -96,7 +85,7 @@ A state machine can be constructed using:
   * `fsm.allTransitions()` - return list of all possible transitions
   * `fsm.allStates()`      - return list of all possible states
 
-# Terminology
+## Terminology
 
 A state machine consists of a set of [**States**](docs/states-and-transitions.md)
 
@@ -123,7 +112,7 @@ A state machine can also have arbitrary [**Data and Methods**](docs/data-and-met
 
 Multiple instances of a state machine can be created using a [**State Machine Factory**](docs/state-machine-factory.md).
 
-# Documentation
+## Documentation
 
 Read more about
 
@@ -139,20 +128,19 @@ Read more about
   * [Upgrading from 2.x](docs/upgrading-from-v2.md)
   * [TypeScript](docs/typescript.md)
 
-# Contributing
+## Contributing
 
 You can [Contribute](docs/contributing.md) to this project with issues or pull requests.
 
-# Release Notes
+## Release Notes
 
 See [RELEASE NOTES](RELEASE_NOTES.md) file.
 
-# License
+## License
 
 See [MIT LICENSE](https://github.com/jakesgordon/javascript-state-machine/blob/master/LICENSE) file.
 
-# Contact
+## Contact
 
 If you have any ideas, feedback, requests or bug reports, you can reach me at
-[jake@codeincomplete.com](mailto:jake@codeincomplete.com), or via
-my website: [Code inComplete](http://codeincomplete.com/)
+[tao_qiufeng@126.com](mailto:tao_qiufeng@126.com)
