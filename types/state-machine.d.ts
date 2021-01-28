@@ -2,7 +2,7 @@ declare class StateMachine {
 	public constructor(options: Partial<StateMachine.Options>);
 	public static factory(options: Partial<StateMachine.Options>): StateMachine.IFSM;
 	public static factory<T>(instance: T, options: Partial<StateMachine.Options>): StateMachine.IFSM | T;
-	[action: string]: ((...args: any[]) => any) | string | string[];
+	[action: string]: ((...args: any[]) => any);
 	public is: StateMachine.StateMachineIs;
 	public can: StateMachine.StateMachineCan;
 	public cannot: StateMachine.StateMachineCan;
