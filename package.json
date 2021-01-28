@@ -6,7 +6,7 @@
 		"type": "git",
 		"url": "git@github.com:taoqf/javascript-state-machine.git"
 	},
-	"types": "types/state-machine.d.ts",
+	"types": "dist/state-machine.d.ts",
 	"keywords": [
 		"finite state machine",
 		"state machine",
@@ -14,26 +14,22 @@
 		"client"
 	],
 	"author": {
-		"name": "Jake Gordon",
-		"email": "jake@codeincomplete.com"
+		"name": "taoqf",
+		"email": "tao_qiufeng@126.com"
 	},
 	"maintainers": [
-		{
-			"name": "Jake Gordon",
-			"email": "jake@codeincomplete.com"
-		},
 		{
 			"name": "taoqf",
 			"email": "tao_qiufeng@126.com"
 		}
 	],
 	"license": "MIT",
-	"main": "dist/state-machine.min.js",
+	"main": "dist/state-machine.js",
 	"files": [
 		"docs/*",
 		"examples/*",
 		"dist/**/*.js",
-		"types/state-machine.d.ts"
+		"dist/**/*.d.ts"
 	],
 	"directories": {},
 	"devDependencies": {
@@ -47,21 +43,21 @@
 		"webpack": "^4.16.5",
 		"webpack-cli": "^3.1.0"
 	},
-	"version": "3.1.6",
+	"version": "4.0.0",
 	"scripts": {
 		"start": "npm run watch",
-		"build": "npm run bundle && npm run minify",
+		"build": "tsc",
 		"bundle": "webpack",
 		"minify": "bin/minify",
-		"watch": "ava --watch",
-		"test": "nyc ava -v && nyc report --reporter=html"
+		"watch": "tsc -w & ava --watch",
+		"test": "tsc & nyc ava -v && nyc report --reporter=html"
 	},
 	"ava": {
 		"files": [
 			"test/**/*.js"
 		],
 		"source": [
-			"src/**/*.js"
+			"dist/**/*.js"
 		]
 	}
 }

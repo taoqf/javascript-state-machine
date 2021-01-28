@@ -35,7 +35,7 @@ module.exports = function (env) {
 			output: {
 				filename: path.join(output, cfg.name + '.js'),
 				library: cfg.library,
-				libraryTarget: 'umd',
+				libraryTarget: 'commonjs-module',
 				umdNamedDefine: false
 			}
 		}
