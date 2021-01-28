@@ -15,8 +15,8 @@ declare class StateMachine {
 	public historyForward(): void;
 	public canHistory(): boolean;
 	public canhistoryForward(): boolean;
-	protected state: string;
-	protected history: string[];
+	// protected state: string;
+	// protected history: string[];
 }
 
 declare namespace StateMachine {
